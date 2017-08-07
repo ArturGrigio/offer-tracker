@@ -6,7 +6,7 @@ A Home Offer Tracker (Developed at Inman Hackathon)
  - **Bradley Inman**
  - **Shane Farkas** (*The Agency*) shane@theagencyre.com
  - **Joel Burslem** (*1000watt*)
- - **Paul Cooley** (*Imprev*)
+ - **Paul Cooley** (*Imprev*) paul@imprev.com
  - **Tom Flanagan** (*The Group Inc*)
 
 

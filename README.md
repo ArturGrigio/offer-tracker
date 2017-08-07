@@ -13,6 +13,8 @@ A Home Offer Tracker (Developed at Inman Hackathon)
 ## Developers: 
  - **Artur Grigio** ([*ListingZen*](https://ListingZen.com))
  - **Todd LaMothe** ([*Union Street Media*](https://unionstreetmedia.com))
+ - **Ami Berger** ([*Voiceter Pro*](http://www.voiceterpro.com)): ami@voiceterpro.com
+ - **Tomas McCandless** ([*Voiceter Pro*](http://www.voiceterpro.com)): tomas@voiceterpro.com
 
 
 ## Stack:

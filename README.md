@@ -12,6 +12,7 @@ A Home Offer Tracker (Developed at Inman Hackathon)
 
 ## Developers: 
  - **Artur Grigio** ([*ListingZen*](https://ListingZen.com))
+ - **Todd LaMothe** ([*Union Street Media*](https://unionstreetmedia.com))
 
 
 ## Stack:

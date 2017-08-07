@@ -15,7 +15,7 @@ A Home Offer Tracker (Developed at Inman Hackathon)
  - **Todd LaMothe** ([*Union Street Media*](https://unionstreetmedia.com))
  - **Ami Berger** ([*Voiceter Pro*](http://www.voiceterpro.com)): ami@voiceterpro.com
  - **Tomas McCandless** ([*Voiceter Pro*](http://www.voiceterpro.com)): tomas@voiceterpro.com
- - **Ricky Watts ([Coldwell Banker Heritage](http://www.coldwellbankerishome.com)): ricky.watts@coldwellbanker.com
+ - **Ricky Watts** ([Coldwell Banker Heritage](http://www.coldwellbankerishome.com)): ricky.watts@coldwellbanker.com
 
 
 ## Stack:

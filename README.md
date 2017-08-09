@@ -1,6 +1,6 @@
 # OFFER TRACKER
 A Home Offer Tracker (Developed at Inman Hackathon)
-
+[![Offer Tracker Demo](http://i.imgur.com/qnfo94Y.gif)](https://youtu.be/t9ycYMwvHQQ)
 
 ## Idea: 
  - **Bradley Inman**

@@ -24,7 +24,7 @@ offer-tracker
 
 # sbt /gradle
 *target
-*build
+
 *.gradle
 
 # docker mount

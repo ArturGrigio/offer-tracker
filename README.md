@@ -25,8 +25,9 @@ A Home Offer Tracker (Developed at Inman Hackathon)
  - AWS RDS
 #### Frontend
  - Vue.js
-#### App (optional)
+#### App
  - React Native
 
-
-# API DOCUMENTATION
+#### API
+- AWS Lambda + API Gateway
+- Lambda functions built on Node and Java

@@ -3,7 +3,10 @@ package org.otracker.db
 import com.typesafe.config.{Config, ConfigFactory}
 
 /**
-  * Use the typesafe config library for application configuration.
+  * A utility object for reading configuration values.
+  *
+  * Uses the typesafe config library for application configuration.
+  * https://github.com/typesafehub/config
   */
 object Environment {
 

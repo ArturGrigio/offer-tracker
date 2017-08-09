@@ -3,6 +3,9 @@ package org.otracker.db
 import org.otracker.db.Tables._
 import org.otracker.db.Tables.profile.api._
 
+/**
+  * Put all the write queries here.
+  */
 trait Writes extends Connection {
 
 

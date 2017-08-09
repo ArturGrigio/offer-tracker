@@ -22,8 +22,10 @@ Homestead.json
 .rocketeer/
 offer-tracker
 
-# sbt
+# sbt /gradle
 *target
+*build
+*.gradle
 
 # docker mount
 API/jvm/docker/data
@@ -31,3 +33,8 @@ API/jvm/docker/data
 # vim
 *.swp
 *.swo
+
+# intellij
+*.idea
+*.iml
+*.ipr

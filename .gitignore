@@ -21,3 +21,13 @@ Homestead.json
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 offer-tracker
+
+# sbt
+*target
+
+# docker mount
+API/jvm/docker/data
+
+# vim
+*.swp
+*.swo

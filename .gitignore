@@ -1,6 +1,8 @@
 vendor/
 node_modules/
 npm-debug.log
+.DS_Store
+*.zip
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -19,3 +21,20 @@ Homestead.json
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 offer-tracker
+
+# sbt /gradle
+*target
+*build
+*.gradle
+
+# docker mount
+API/jvm/docker/data
+
+# vim
+*.swp
+*.swo
+
+# intellij
+*.idea
+*.iml
+*.ipr

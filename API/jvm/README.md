@@ -36,3 +36,10 @@ we should do this any time the schema definition is changed and check in the upd
 cd codegen;
 ./generate.sh
 ```
+
+## running the tests
+we use gradle and have included a wrapper script for gradle 3.5
+
+```
+./gradlew clean test
+```

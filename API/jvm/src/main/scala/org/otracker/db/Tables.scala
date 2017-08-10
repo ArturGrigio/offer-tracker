@@ -28,7 +28,7 @@ trait Tables {
     AgentOfferRow.tupled((<<[Int], <<[Int]))
   }
   /** Table description of table agent_offer. Objects of this class serve as prototypes for rows in queries. */
-  class AgentOffer(_tableTag: Tag) extends profile.api.Table[AgentOfferRow](_tableTag, Some("otracker"), "agent_offer") {
+  class AgentOffer(_tableTag: Tag) extends profile.api.Table[AgentOfferRow](_tableTag, Some("tracker"), "agent_offer") {
     def * = (agentId, offerId) <> (AgentOfferRow.tupled, AgentOfferRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(agentId), Rep.Some(offerId)).shaped.<>({r=>import r._; _1.map(_=> AgentOfferRow.tupled((_1.get, _2.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -68,7 +68,7 @@ trait Tables {
     AgentsRow.tupled((<<[Int], <<?[String], <<?[String], <<?[String], <<?[String], <<?[String], <<?[String], <<?[String], <<?[String], <<?[java.sql.Timestamp], <<?[java.sql.Timestamp]))
   }
   /** Table description of table agents. Objects of this class serve as prototypes for rows in queries. */
-  class Agents(_tableTag: Tag) extends profile.api.Table[AgentsRow](_tableTag, Some("otracker"), "agents") {
+  class Agents(_tableTag: Tag) extends profile.api.Table[AgentsRow](_tableTag, Some("tracker"), "agents") {
     def * = (id, email, password, firstName, lastName, photoUrl, phoneNumber, brokerage, designations, createdAt, updatedAt) <> (AgentsRow.tupled, AgentsRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(id), email, password, firstName, lastName, photoUrl, phoneNumber, brokerage, designations, createdAt, updatedAt).shaped.<>({r=>import r._; _1.map(_=> AgentsRow.tupled((_1.get, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -114,7 +114,7 @@ trait Tables {
     EventsRow.tupled((<<[Int], <<[Int], <<?[String], <<?[String], <<?[String], <<?[java.sql.Timestamp], <<?[java.sql.Timestamp]))
   }
   /** Table description of table events. Objects of this class serve as prototypes for rows in queries. */
-  class Events(_tableTag: Tag) extends profile.api.Table[EventsRow](_tableTag, Some("otracker"), "events") {
+  class Events(_tableTag: Tag) extends profile.api.Table[EventsRow](_tableTag, Some("tracker"), "events") {
     def * = (id, offerId, description, status, statusCode, createdAt, updatedAt) <> (EventsRow.tupled, EventsRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(id), Rep.Some(offerId), description, status, statusCode, createdAt, updatedAt).shaped.<>({r=>import r._; _1.map(_=> EventsRow.tupled((_1.get, _2.get, _3, _4, _5, _6, _7)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -154,7 +154,7 @@ trait Tables {
     OffersRow.tupled((<<[Int], <<[String], <<?[String], <<?[String], <<?[java.sql.Timestamp], <<?[java.sql.Timestamp]))
   }
   /** Table description of table offers. Objects of this class serve as prototypes for rows in queries. */
-  class Offers(_tableTag: Tag) extends profile.api.Table[OffersRow](_tableTag, Some("otracker"), "offers") {
+  class Offers(_tableTag: Tag) extends profile.api.Table[OffersRow](_tableTag, Some("tracker"), "offers") {
     def * = (id, link, address, mlsNumber, createdAt, updatedAt) <> (OffersRow.tupled, OffersRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(id), Rep.Some(link), address, mlsNumber, createdAt, updatedAt).shaped.<>({r=>import r._; _1.map(_=> OffersRow.tupled((_1.get, _2.get, _3, _4, _5, _6)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -185,7 +185,7 @@ trait Tables {
     OfferViewerRow.tupled((<<[Int], <<[Int]))
   }
   /** Table description of table offer_viewer. Objects of this class serve as prototypes for rows in queries. */
-  class OfferViewer(_tableTag: Tag) extends profile.api.Table[OfferViewerRow](_tableTag, Some("otracker"), "offer_viewer") {
+  class OfferViewer(_tableTag: Tag) extends profile.api.Table[OfferViewerRow](_tableTag, Some("tracker"), "offer_viewer") {
     def * = (offerId, viewerId) <> (OfferViewerRow.tupled, OfferViewerRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(offerId), Rep.Some(viewerId)).shaped.<>({r=>import r._; _1.map(_=> OfferViewerRow.tupled((_1.get, _2.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -218,7 +218,7 @@ trait Tables {
     SessionsRow.tupled((<<[String], <<[Int], <<?[java.sql.Timestamp], <<?[java.sql.Timestamp]))
   }
   /** Table description of table sessions. Objects of this class serve as prototypes for rows in queries. */
-  class Sessions(_tableTag: Tag) extends profile.api.Table[SessionsRow](_tableTag, Some("otracker"), "sessions") {
+  class Sessions(_tableTag: Tag) extends profile.api.Table[SessionsRow](_tableTag, Some("tracker"), "sessions") {
     def * = (id, agentId, createdAt, updatedAt) <> (SessionsRow.tupled, SessionsRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(id), Rep.Some(agentId), createdAt, updatedAt).shaped.<>({r=>import r._; _1.map(_=> SessionsRow.tupled((_1.get, _2.get, _3, _4)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
@@ -252,7 +252,7 @@ trait Tables {
     ViewersRow.tupled((<<[Int], <<?[String], <<?[String], <<?[String], <<?[java.sql.Timestamp], <<?[java.sql.Timestamp]))
   }
   /** Table description of table viewers. Objects of this class serve as prototypes for rows in queries. */
-  class Viewers(_tableTag: Tag) extends profile.api.Table[ViewersRow](_tableTag, Some("otracker"), "viewers") {
+  class Viewers(_tableTag: Tag) extends profile.api.Table[ViewersRow](_tableTag, Some("tracker"), "viewers") {
     def * = (id, firstName, lastName, phoneNumber, createdAt, updatedAt) <> (ViewersRow.tupled, ViewersRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
     def ? = (Rep.Some(id), firstName, lastName, phoneNumber, createdAt, updatedAt).shaped.<>({r=>import r._; _1.map(_=> ViewersRow.tupled((_1.get, _2, _3, _4, _5, _6)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))

@@ -50,7 +50,7 @@ trait Connection {
 object Connection {
 
   // this will use hikari cp for pooled connections
-  val connection: Database = Database.forConfig("otracker", Environment.config)
+  val connection: Database = Database.forConfig("tracker", Environment.config)
 
   // shut down our connection on jvm exit
   Runtime.getRuntime.addShutdownHook(

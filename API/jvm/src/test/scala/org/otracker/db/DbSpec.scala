@@ -4,14 +4,15 @@ import org.junit.{Before, Test}
 import org.otracker.BaseSpec
 import org.otracker.db.Tables.AgentsRow
 import org.otracker.db.Tables.profile.api._
+import org.pmw.tinylog.Logger
 
 class DbSpec extends BaseSpec with Connection {
 
   /** Truncate the schema before each test. */
-  @Before
-  def truncate(): Unit = {
-    this.synchronously(Tables.schema.drop andThen Tables.schema.create)
-  }
+//  @Before
+//  def truncate(): Unit = {
+//    this.synchronously(Tables.schema.drop andThen Tables.schema.create)
+//  }
 
   /** Checks that we can insert an agent correctly. */
   @Test
@@ -24,5 +25,11 @@ class DbSpec extends BaseSpec with Connection {
     Db.insertAgent(agent) should be (1)
 
     Db.getNumAgents() should be (1)
+  }
+
+
+  @Test
+  def numOffers(): Unit = {
+    Logger.info(s"there are ${Db.getNumOffers()} offers")
   }
 }

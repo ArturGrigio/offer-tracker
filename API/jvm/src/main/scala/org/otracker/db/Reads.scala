@@ -9,11 +9,25 @@ trait Reads extends Connection {
   val numAgentsQuery: DBIO[Int] = Agents.length.result
 
 
-  val rawSqlQuery: DBIO[Int] = sql"SELECT count(*) FROM Agents".as[Int].head
-
-
-  this.synchronously(rawSqlQuery)
+  // we can create raw sql queries like this
+  val rawSqlQuery: DBIO[Int] = sql"SELECT count(*) FROM agents".as[Int].head
 
   def getNumAgents(): Int = this.synchronously(numAgentsQuery)
 
+
+  def getNumOffers(): Int = this.synchronously(Offers.length.result)
+
+
+
+
+
+  def getOffersForAgent(agentId: Int): Iterable[OffersRow] = {
+    val action = for {
+      agentOffer <- AgentOffer filter { _.agentId === agentId }
+      offer <- Offers filter { _.id === agentOffer.offerId }
+    } yield offer
+
+
+    this.synchronously(action.result)
+  }
 }

@@ -1,4 +1,4 @@
-package org.otracker;
+package org.otracker.db;
 
 import org.junit.Test;
 import org.otracker.db.Db;

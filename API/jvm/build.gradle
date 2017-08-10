@@ -90,3 +90,5 @@ void addDeploymentTask(String name, String functionHandler, int memoryMB = 512) 
 
 addDeploymentTask("offersForAgent", "org.otracker.lambda.OffersForAgentHandler::handleRequest")
 addDeploymentTask("offersForViewer", "org.otracker.lambda.OffersForViewerHandler::handleRequest")
+addDeploymentTask("events", "org.otracker.lambda.EventsHandler::handleRequest")
+addDeploymentTask("eventById", "org.otracker.lambda.EventByIdHandler::handleRequest")

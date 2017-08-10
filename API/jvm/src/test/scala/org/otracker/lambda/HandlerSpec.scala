@@ -6,13 +6,10 @@ import org.pmw.tinylog.Logger
 
 class HandlerSpec extends BaseSpec {
 
-
   @Test
   def testOffers(): Unit = {
-    val response: String = OffersForAgentHandler.computeResponse(null, null)
-
+    // TODO we should actually insert some data and check that we can read it back
+    val response: String = OffersForAgentHandler.findOffers(0)
     Logger.info(response)
   }
-
-
 }

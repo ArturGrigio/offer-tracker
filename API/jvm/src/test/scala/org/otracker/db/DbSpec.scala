@@ -9,10 +9,10 @@ import org.pmw.tinylog.Logger
 class DbSpec extends BaseSpec with Connection {
 
   /** Truncate the schema before each test. */
-//  @Before
-//  def truncate(): Unit = {
-//    this.synchronously(Tables.schema.drop andThen Tables.schema.create)
-//  }
+  @Before
+  def truncate(): Unit = {
+    this.synchronously(Tables.schema.drop andThen Tables.schema.create)
+  }
 
   /** Checks that we can insert an agent correctly. */
   @Test

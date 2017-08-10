@@ -55,4 +55,19 @@ trait Reads extends Connection {
 
     this.synchronously(action.result)
   }
+
+
+  def getAllEvents(): Iterable[EventsRow] = {
+    this.synchronously(Events.result)
+  }
+
+  def getEventById(eventId: Int): Option[EventsRow] = {
+    val action = Events filter { _.id === eventId }
+    this.synchronously(action.result.headOption)
+  }
+
+  def getEventsForOffer(offerId: Int): Iterable[EventsRow] = {
+    val action = Events filter { _.offerId === offerId }
+    this.synchronously(action.result)
+  }
 }

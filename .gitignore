@@ -25,7 +25,7 @@ offer-tracker
 # sbt /gradle
 *target
 *build
-*.gradle
+API/jvm/.gradle
 
 # docker mount
 API/jvm/docker/data

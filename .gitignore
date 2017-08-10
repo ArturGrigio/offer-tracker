@@ -22,10 +22,11 @@ Homestead.json
 .rocketeer/
 offer-tracker
 
-# sbt /gradle
+# sbt/gradle
 *target
 *build
 API/jvm/.gradle
+
 
 # docker mount
 API/jvm/docker/data

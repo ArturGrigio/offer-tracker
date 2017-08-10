@@ -24,11 +24,13 @@ trait HandlerLike extends RequestStreamHandler {
     input.close()
     Logger.info(s"invoked with $request")
 
-    val response: JValue = this.computeResponse(request, context)
+    val response: String = this.computeResponse(request, context)
 
     val dataOutput: DataOutputStream = new DataOutputStream(output)
-    dataOutput.writeChars(compact(render(response)))
+    dataOutput.writeBytes(response)
+    dataOutput.flush()
     dataOutput.close()
+    output.flush()
     output.close()
   }
 
@@ -39,5 +41,5 @@ trait HandlerLike extends RequestStreamHandler {
     * @param request
     * @return response json
     */
-  def computeResponse(request: JValue, context: Context): JValue
+  def computeResponse(request: JValue, context: Context): String
 }

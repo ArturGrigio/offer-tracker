@@ -3,6 +3,7 @@ package org.otracker.lambda
 import com.amazonaws.services.lambda.runtime.Context
 import org.json4s.JValue
 import org.json4s.JsonDSL._
+import org.json4s.jackson.JsonMethods._
 import org.otracker.db.Db
 
 /**
@@ -11,12 +12,12 @@ import org.otracker.db.Db
 object AgentsHandler extends HandlerLike {
 
 
-  override def computeResponse(request: JValue, context: Context): JValue = {
+  override def computeResponse(request: JValue, context: Context): String = {
 
     // query the db
     val numAgents: Int = Db.getNumAgents()
 
     // create json response
-    ("numAgents" -> numAgents)
+    compact(render("numAgents" -> numAgents))
   }
 }

@@ -1,6 +1,7 @@
 plugins {
     id 'scala'
     id 'com.github.johnrengelman.shadow' version '2.0.1'
+    id 'jp.classmethod.aws.lambda' version '0.35'
     id 'maven-publish'
 }
 
@@ -43,3 +44,48 @@ shadowJar {
 tasks.withType(Test) {
     systemProperties System.properties
 }
+
+/**
+ * Tasks for deploying and invoking our lambda functions.
+ *
+ * You'll need to make your aws credentials available to the toolchain.
+ * http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+ *
+ * One way is to populate your ~/.aws/credentials like this:
+ *   [offer-tracker]
+ *   aws_access_key_id=01234
+ *   aws_secret_access_key=56789
+ */
+import com.amazonaws.services.lambda.model.InvocationType
+import jp.classmethod.aws.gradle.lambda.AWSLambdaInvokeTask
+import jp.classmethod.aws.gradle.lambda.AWSLambdaMigrateFunctionTask
+import com.amazonaws.services.lambda.model.Runtime
+
+aws {
+    profileName = 'offer-tracker'
+    region = 'us-west-1'
+}
+
+
+/**
+ * Adds a new dynamic lambda deployment task with the specified parameters to our build.
+ *
+ * @param name name of the lambda function.
+ * @param functionHandler fully qualified signature of the function handler.
+ * @param memoryMB memory size of the function, in MB.
+ */
+void addDeploymentTask(String name, String functionHandler, int memoryMB = 512) {
+
+    task "deploy${name.capitalize()}" (type: AWSLambdaMigrateFunctionTask, dependsOn: shadowJar) {
+        functionName = name
+        role = "arn:aws:iam::$AWS_ACCOUNT_ID:role/service-role/offers-search"
+        runtime = Runtime.Java8
+        timeout = 15 // seconds
+        memorySize = memoryMB
+        zipFile = shadowJar.archivePath
+        handler = functionHandler
+    }
+}
+
+
+addDeploymentTask("offersForAgent", "org.otracker.lambda.OffersForAgentHandler::handleRequest")

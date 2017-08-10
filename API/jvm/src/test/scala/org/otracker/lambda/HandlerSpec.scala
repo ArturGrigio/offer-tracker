@@ -12,4 +12,10 @@ class HandlerSpec extends BaseSpec {
     val response: String = OffersForAgentHandler.findOffers(0)
     Logger.info(response)
   }
+
+
+  @Test
+  def testViewerOffers(): Unit = {
+    Logger.info(OffersForViewerHandler.findOffers(0))
+  }
 }

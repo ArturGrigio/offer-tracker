@@ -40,4 +40,19 @@ trait Reads extends Connection {
 
     this.synchronously(action.result)
   }
+
+
+  /**
+    *
+    * @param viewerId
+    * @return all the [[OffersRow]] associated with this viewer id.
+    */
+  def getOffersForViewer(viewerId: Int): Iterable[OffersRow] = {
+    val action = for {
+      offerViewer <- OfferViewer filter { _.viewerId === viewerId }
+      offer <- Offers filter { _.id === offerViewer.offerId }
+    } yield offer
+
+    this.synchronously(action.result)
+  }
 }

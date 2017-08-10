@@ -89,3 +89,4 @@ void addDeploymentTask(String name, String functionHandler, int memoryMB = 512) 
 
 
 addDeploymentTask("offersForAgent", "org.otracker.lambda.OffersForAgentHandler::handleRequest")
+addDeploymentTask("offersForViewer", "org.otracker.lambda.OffersForViewerHandler::handleRequest")
